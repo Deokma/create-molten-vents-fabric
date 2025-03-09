@@ -25,8 +25,8 @@ public class MoltenVentsConvertibleData implements SimpleSynchronousResourceRelo
 
     @Override
     public void reload(ResourceManager manager) {
-        convertibleBlocksMap.clear(); // Очищаем карту перед загрузкой
-        String folderPath = "molten_vents/blocks/convertible"; // Папка с JSON-файлами
+        convertibleBlocksMap.clear();
+        String folderPath = "molten_vents/blocks/convertible"; // Folder with JSON files
 
         for (Identifier id : manager.findResources(folderPath,
                 path -> path.getPath().endsWith(".json")).keySet()) {
@@ -34,16 +34,15 @@ public class MoltenVentsConvertibleData implements SimpleSynchronousResourceRelo
                 List<Resource> resources = manager.getAllResources(id);
                 for (Resource resource : resources) {
                     try (InputStream stream = resource.getInputStream();
-                         BufferedReader reader = new BufferedReader(new InputStreamReader(stream, StandardCharsets.UTF_8))) {
+                         BufferedReader reader =
+                                 new BufferedReader(new InputStreamReader(stream, StandardCharsets.UTF_8))) {
                         JsonElement json = JsonParser.parseReader(reader);
                         convertibleBlocksMap.put(id, json);
                     }
                 }
             } catch (Exception e) {
-                System.err.println("Ошибка при загрузке " + id + ": " + e.getMessage());
+                System.err.println("Error during loading " + id + ": " + e.getMessage());
             }
         }
-
-        System.out.println("Загружено " + convertibleBlocksMap.size() + " convertible блоков");
     }
 }

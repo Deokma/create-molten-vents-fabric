@@ -37,7 +37,7 @@ public class MoltenBlockEntities {
         }
 
         if (activeMoltenBlock == null) {
-            return Map.of(); // Вернуть пустую мапу, если не найден активный блок
+            return Map.of(); // Return empty map if no active block is found
         }
 
         BlockEntityType<ActiveMoltenBlockEntity> blockEntityType = Registry.register(

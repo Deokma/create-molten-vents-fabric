@@ -33,6 +33,7 @@ public class ActiveMoltenBlock extends BlockWithEntity implements BlockEntityPro
         }
         return blockEntityType == activeMoltenBlockEntity ? ActiveMoltenBlockEntity::tick : null;
     }
+
     @Nullable
     @Override
     public BlockEntity createBlockEntity(BlockPos blockPos, BlockState blockState) {

@@ -1,11 +1,11 @@
 package com.deokma.MoltenVents;
 
-import com.deokma.MoltenVents.api.biome.features.MoltenVentsFeatures;
+//import com.deokma.MoltenVents.api.biome.features.MoltenVentsFeatures;
+import com.deokma.MoltenVents.block.MoltenBlocks;
+import com.deokma.MoltenVents.block.entity.MoltenBlockEntities;
 import com.deokma.MoltenVents.config.CommonConfig;
 import com.deokma.MoltenVents.core.MoltenVentsConductiveData;
 import com.deokma.MoltenVents.core.MoltenVentsConvertibleData;
-import com.deokma.MoltenVents.block.entity.MoltenBlockEntities;
-import com.deokma.MoltenVents.block.MoltenBlocks;
 import com.deokma.MoltenVents.item.MoltenItems;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.resource.ResourceManagerHelper;
@@ -35,7 +35,7 @@ public class MoltenVents implements ModInitializer {
         MoltenItems.registerMoltenItems();
 
         CommonConfig.register();
-        MoltenVentsFeatures.MOLTEN_VENT.getClass();
+        //MoltenVentsFeatures.MOLTEN_VENT.getClass();
 
         ResourceManagerHelper.get(ResourceType.SERVER_DATA).registerReloadListener(new MoltenVentsConductiveData());
         ResourceManagerHelper.get(ResourceType.SERVER_DATA).registerReloadListener(new MoltenVentsConvertibleData());

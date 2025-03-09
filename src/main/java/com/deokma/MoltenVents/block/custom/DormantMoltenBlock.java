@@ -2,10 +2,10 @@ package com.deokma.MoltenVents.block.custom;
 
 import com.deokma.MoltenVents.block.MoltenBlocks;
 import net.minecraft.block.Block;
-
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.explosion.Explosion;
 import net.minecraft.world.World;
+import net.minecraft.world.explosion.Explosion;
+
 import java.util.List;
 import java.util.Map;
 

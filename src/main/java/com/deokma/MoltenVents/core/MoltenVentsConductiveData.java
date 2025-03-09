@@ -25,24 +25,24 @@ public class MoltenVentsConductiveData implements SimpleSynchronousResourceReloa
 
     @Override
     public void reload(ResourceManager manager) {
-        conductiveBlocksMap.clear(); // Очищаем карту перед загрузкой
-        String folderPath = "molten_vents/blocks/conductive"; // Папка с JSON-файлами
+        conductiveBlocksMap.clear(); // Clean the map before uploading
+        String folderPath = "molten_vents/blocks/conductive"; // Folder with JSON files
 
-        for (Identifier id : manager.findResources(folderPath, path -> path.getPath().endsWith(".json")).keySet()) {
+        for (Identifier id : manager.findResources(folderPath,
+                path -> path.getPath().endsWith(".json")).keySet()) {
             try {
                 List<Resource> resources = manager.getAllResources(id);
                 for (Resource resource : resources) {
                     try (InputStream stream = resource.getInputStream();
-                         BufferedReader reader = new BufferedReader(new InputStreamReader(stream, StandardCharsets.UTF_8))) {
+                         BufferedReader reader =
+                                 new BufferedReader(new InputStreamReader(stream, StandardCharsets.UTF_8))) {
                         JsonElement json = JsonParser.parseReader(reader);
                         conductiveBlocksMap.put(id, json);
                     }
                 }
             } catch (Exception e) {
-                System.err.println("Ошибка при загрузке " + id + ": " + e.getMessage());
+                System.err.println("Error when loading " + id + ": " + e.getMessage());
             }
         }
-
-        System.out.println("Загружено " + conductiveBlocksMap.size() + " conductive блоков");
     }
 }

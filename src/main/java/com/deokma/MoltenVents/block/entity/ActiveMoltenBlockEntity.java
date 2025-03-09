@@ -18,7 +18,10 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+import java.util.Objects;
 
 import static com.deokma.MoltenVents.block.entity.MoltenBlockEntities.getMoltenBlockEntities;
 
@@ -53,7 +56,7 @@ public class ActiveMoltenBlockEntity extends BlockEntity {
                 "molten_vents/blocks/conductive/" + name + ".json"));
 
         if (conductiveElement == null || !conductiveElement.isJsonObject()) {
-            System.out.println("Ошибка: отсутствуют данные для блока " + name);
+            System.out.println("Error: missing data for block " + name);
             return Map.of(1, List.of(), 2, List.of());
         }
 
@@ -69,7 +72,7 @@ public class ActiveMoltenBlockEntity extends BlockEntity {
                 "molten_vents/blocks/convertible/" + name + ".json"));
 
         if (convertibleElement == null || !convertibleElement.isJsonObject()) {
-            System.out.println("Ошибка: отсутствуют данные для блока " + name);
+            System.out.println("Error: missing data for block " + name);
             return Map.of(1, List.of(), 2, List.of());
         }
 
