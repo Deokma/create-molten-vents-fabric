@@ -1,6 +1,6 @@
 # Create: Molten Vents (Fabric 1.20.1)
 
-![Mod Logo](https://raw.githubusercontent.com/Deokma/create-molten-vents-fabric/1.20.1/src/main/resources/assets/molten_vents/textures/icon.png)
+![Mod Logo](https://raw.githubusercontent.com/Deokma/create-molten-vents-fabric/refs/heads/1.20.1/src/main/resources/assets/molten_vents/icon.png)
 
 ## 📜 Description
 This is an **unofficial port** of the mod [Create: Molten Vents](https://modrinth.com/mod/create-molten-vents) for **Fabric 1.20.1**. The original mod was developed by [Apothicon02](https://github.com/Apothicon02/Create-Molten-Vents), but this port does not include the structure generation from the original mod.
