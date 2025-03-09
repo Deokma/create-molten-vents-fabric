@@ -21,11 +21,13 @@ This is an **unofficial port** of the mod [Create: Molten Vents](https://modrint
 
 ## ⚙ Development
 ### Build Project
-``sh
+
+```sh
 ./gradlew build
 ```
 
 ### Start in the development environment
+
 ```sh
 ./gradlew runClient
 ```
