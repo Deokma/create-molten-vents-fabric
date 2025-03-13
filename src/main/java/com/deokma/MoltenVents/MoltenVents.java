@@ -1,12 +1,12 @@
 package com.deokma.MoltenVents;
 
-//import com.deokma.MoltenVents.api.biome.features.MoltenVentsFeatures;
 import com.deokma.MoltenVents.block.MoltenBlocks;
 import com.deokma.MoltenVents.block.entity.MoltenBlockEntities;
 import com.deokma.MoltenVents.config.CommonConfig;
 import com.deokma.MoltenVents.core.MoltenVentsConductiveData;
 import com.deokma.MoltenVents.core.MoltenVentsConvertibleData;
 import com.deokma.MoltenVents.item.MoltenItems;
+import com.deokma.MoltenVents.world.MoltenVentFeatures;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.resource.ResourceManagerHelper;
 import net.minecraft.resource.ResourceType;
@@ -18,13 +18,17 @@ public class MoltenVents implements ModInitializer {
 
     public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
 
+
     @Override
     public void onInitialize() {
+        LOGGER.info("Initializing " + MOD_ID);
+
         try {
             MoltenVentsJsonReader.main();
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
+
         MoltenBlocks.createCustomMoltenBlocks();
         MoltenBlocks.registerMoltenBlocks();
 
@@ -35,9 +39,13 @@ public class MoltenVents implements ModInitializer {
         MoltenItems.registerMoltenItems();
 
         CommonConfig.register();
-        //MoltenVentsFeatures.MOLTEN_VENT.getClass();
+
+        MoltenVentFeatures.init();
 
         ResourceManagerHelper.get(ResourceType.SERVER_DATA).registerReloadListener(new MoltenVentsConductiveData());
         ResourceManagerHelper.get(ResourceType.SERVER_DATA).registerReloadListener(new MoltenVentsConvertibleData());
+
+
+        LOGGER.info(MOD_ID + " successfully initialized!");
     }
 }
