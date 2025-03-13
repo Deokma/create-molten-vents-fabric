@@ -3,35 +3,25 @@
 	"id": "molten-vents",
 	"version": "${version}",
 	"name": "Create: Molten Vents Fabric",
-	"description": "This is an example description! Tell everyone what your mod is about!",
+	"description": "Molten Vents is a mod which adds a renewable source of the orestones found in the Create mod, and by extension the many resources that can be processed from them.",
 	"authors": [
-		"Me!"
+		"Original: Apothicon, Port: Deokma"
 	],
 	"contact": {
-		"homepage": "https://fabricmc.net/",
-		"sources": "https://github.com/FabricMC/fabric-example-mod"
+		"homepage": "https://modrinth.com/mod/create-molten-vents",
+		"sources": "https://github.com/Deokma/create-molten-vents-fabric"
 	},
-	"license": "CC0-1.0",
+	"license": "MIT",
 	"icon": "assets/molten-vents/icon.png",
 	"environment": "*",
 	"entrypoints": {
 		"main": [
 			"com.deokma.MoltenVents.MoltenVents"
 		],
-		"client": [
-			"com.deokma.MoltenVents.MoltenVentsFabricClient"
-		],
 		"fabric-datagen": [
 			"com.deokma.MoltenVents.MoltenVentsDataGenerator"
 		]
 	},
-	"mixins": [
-		"create-molten-vents-fabric.mixins.json",
-		{
-			"config": "create-molten-vents-fabric.client.mixins.json",
-			"environment": "client"
-		}
-	],
 	"depends": {
 		"fabricloader": ">=0.16.10",
 		"minecraft": "~1.20.1",
